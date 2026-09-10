@@ -161,9 +161,9 @@ hr {
   left: 169px;
   display: none;
 }
-.hangman-draw .hands {
+/* .hangman-draw .hands {
   display: none;
-}
+} */
 .hangman-draw .hands::before {
   content: "";
   width: 4px;
@@ -174,6 +174,7 @@ hr {
   left: 144px;
   transform: rotate(124deg);
   border-radius: 6px;
+  display: none;
 }
 .hangman-draw .hands::after {
   content: "";
@@ -185,10 +186,11 @@ hr {
   left: 194px;
   transform: rotate(-124deg);
   border-radius: 6px;
-}
-.hangman-draw .legs {
   display: none;
 }
+/* .hangman-draw .legs {
+  display: none;
+} */
 .hangman-draw .legs::before {
   content: "";
   width: 4px;
@@ -199,6 +201,7 @@ hr {
   left: 145px;
   transform: rotate(237deg);
   border-radius: 6px;
+  display: none;
 }
 .hangman-draw .legs::after {
   content: "";
@@ -210,6 +213,7 @@ hr {
   left: 193px;
   transform: rotate(-237deg);
   border-radius: 6px;
+  display: none;
 }
 .letters {
   flex: 1;
@@ -294,10 +298,16 @@ hr {
 .hangman-draw.wrong-6 .body {
   display: block;
 }
-.hangman-draw.wrong-7 .hands {
+.hangman-draw.wrong-7 .hands:before {
   display: block;
 }
-.hangman-draw.wrong-8 .legs {
+.hangman-draw.wrong-8 .hands:after {
+  display: block;
+}
+.hangman-draw.wrong-9 .legs:before {
+  display: block;
+}
+.hangman-draw.wrong-10 .legs:after {
   display: block;
 }
 .gameover {
@@ -319,6 +329,182 @@ hr {
   font-weight: bold;
 }
 .theword {
-  color: #10cab7;
+  color: #d70000;
   font-weight: bold;
+  font-size: 40px;
+}
+.gameover button {
+  margin-top: 15px;
+  background-color: red;
+  color: black;
+  border: none;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* =========================================================== */
+/* ============ نسخة الموبايل من الرسمة (نفس التصميم بمقاس أصغر) ============ */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .hangman-draw {
+    height: 210px;
+    padding: 10px;
+    min-height: 102px;
+  }
+
+  .hangman-draw .the-draw {
+    width: 40px;
+    height: 182px;
+    border-bottom: 3px solid white;
+    left: -52px;
+  }
+
+  .hangman-draw .the-stand::before {
+    width: 3px;
+  }
+
+  .hangman-draw .the-stand::after {
+    width: 91px;
+    height: 3px;
+    left: 64px;
+  }
+
+  .hangman-draw .the-hang::before {
+    width: 3px;
+    height: 26px;
+    left: 109px;
+  }
+
+  .hangman-draw .the-hang::after {
+    width: 3px;
+    height: 22px;
+    left: 26px;
+    top: -2px;
+  }
+
+  .hangman-draw .the-rope {
+    width: 52px;
+    height: 52px;
+    border: 3px dashed white;
+    top: 25px;
+    left: 85px;
+  }
+
+  .hangman-draw .head {
+    width: 39px;
+    height: 39px;
+    border: 3px solid white;
+    top: 31px;
+    left: 92px;
+  }
+
+  .hangman-draw .body {
+    width: 3px;
+    height: 83px;
+    top: 70px;
+    left: 110px;
+  }
+
+  .hangman-draw .hands::before {
+    width: 3px;
+    height: 39px;
+    top: 70px;
+    left: 94px;
+  }
+
+  .hangman-draw .hands::after {
+    width: 3px;
+    height: 39px;
+    top: 70px;
+    left: 126px;
+  }
+
+  .hangman-draw .legs::before {
+    width: 3px;
+    height: 39px;
+    top: 142px;
+    left: 94px;
+  }
+
+  .hangman-draw .legs::after {
+    width: 3px;
+    height: 39px;
+    top: 142px;
+    left: 125px;
+  }
+
+  /* ============ الكيبورد (letter-box) عشان يبان كامل ============ */
+  .letters .letter-box {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  .guess-letters {
+    padding: 10px;
+    flex-wrap: wrap;
+    min-height: auto;
+  }
+
+  .guess-letters span {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ============ Game Over على الشاشات المتوسطة ============ */
+  .gameover {
+    width: 85%;
+    padding: 20px 16px;
+  }
+
+  .gameover .game-over-title {
+    font-size: 24px;
+  }
+
+  .gameover span {
+    font-size: 15px;
+  }
+}
+
+/* ============ شاشات أصغر من كده (موبايلات صغيرة جداً) ============ */
+@media (max-width: 400px) {
+  .letters .letter-box,
+  .guess-letters span {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .gameover {
+    width: 88%;
+    padding: 16px 12px;
+  }
+
+  .gameover .game-over-title {
+    font-size: 20px;
+  }
+
+  .gameover span {
+    font-size: 13px;
+  }
+
+  .gameover button {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
 }

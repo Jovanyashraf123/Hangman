@@ -20,10 +20,76 @@ lettesArrary.forEach(letter =>{
 // ===========================================================================//
 
 const words = {
-  programming: ["php", "javascript", "go", "scala", "fortran", "r", "mysql", "python"],
-  movies: ["Prestige", "Inception", "Parasite", "Interstellar", "Whiplash", "Memento", "Coco", "Up"],
-  people: ["nancy emad"],
-  countries: ["Syria", "Palestine", "Yemen", "Egypt", "Bahrain", "Qatar"]
+  people: [
+  "adel imam",
+  "mohamed salah",
+  "amr diab",
+  "tamer hosny",
+  "mohamed henedy",
+  "ahmed helmy",
+  "karim abdel aziz",
+  "ahmed el saka",
+  "khaled el sawy",
+  "yousra",
+  "menna shalaby",
+  "sherihan",
+  "sherine",
+  "angham",
+  "ruby",
+  "dina el sherbiny",
+  "mina el shalaby",
+  "nour el sherif",
+  "omar el sherif",
+  "ahmed ezz",
+  "mohamed ramadan",
+  "hassan el radad",
+  "mai ezz el din",
+  "donia samir ghanem",
+  "ragaa al gidawe",
+  "khaled el nabawy",
+  "youssef el sherif",
+  "asala",
+  "amr youssef",
+  "ahmed mekky",
+  "mohamed saad",
+  "ashraf abdel baki",
+  "hany ramzy",
+  "mostafa shaban",
+  "eyad nassar"
+],
+countries: [
+  "egypt",
+  "united states",
+  "united kingdom",
+  "canada",
+  "australia",
+  "germany",
+  "france",
+  "italy",
+  "spain",
+  "brazil",
+  "argentina",
+  "mexico",
+  "japan",
+  "china",
+  "south korea",
+  "india",
+  "russia",
+  "turkey",
+  "saudi arabia",
+  "united arab emirates",
+  "qatar",
+  "palestine",
+  "israel",
+  "greece",
+  "switzerland",
+  "netherlands",
+  "sweden",
+  "norway",
+  "south africa",
+  "thailand"
+],
+animals: ["lion", "tiger", "elephant", "giraffe", "monkey", "horse", "dog", "cat","wolf", "rabbit", "dolphin", "shark", "eagle"]
 }
 
 let allkeys = Object.keys(words);
@@ -105,7 +171,7 @@ document.addEventListener("click", e =>{
             thedraw.classList.add(`wrong-${wrong}`)
 
             // document.getElementById("wrong").play();
-            if(wrong === 8){
+            if(wrong === 10){
 
                 EndGame();
                 lettersContainer.classList.add("finshed");
@@ -122,21 +188,11 @@ document.addEventListener("click", e =>{
 });
 function EndGame(){
 
-    let div = document.createElement("div");
+let div = document.createElement("div");
 
-    div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The Word is <span class = "theword">${RandomName}</span></span>`;
-    
-    div.className = "gameover";
+div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The Word is <span class = "theword">${RandomName}</span></span><br><button onclick="location.reload()">New Game</button>`;
 
-    document.body.appendChild(div);
+div.className = "gameover";
 
-}
-function success(){
-        let div = document.createElement("div");
-
-    div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The Word is <span class = "theword">${RandomName}</span></span>`;
-    
-    div.className = "gameover";
-
-    document.body.appendChild(div);
+document.body.appendChild(div);
 }
