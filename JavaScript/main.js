@@ -83,6 +83,8 @@ document.addEventListener("click", e =>{
             if(theclickedletter == wordletter){
 
                 thestatus = true;
+
+              
             
                 guessspan.forEach((span , spanIndex) =>{
 
@@ -93,6 +95,7 @@ document.addEventListener("click", e =>{
                 })
 
             }
+             
         });
         // Outside Loop
         if(thestatus !==true){
@@ -100,7 +103,40 @@ document.addEventListener("click", e =>{
             wrong++;
 
             thedraw.classList.add(`wrong-${wrong}`)
+
+            // document.getElementById("wrong").play();
+            if(wrong === 8){
+
+                EndGame();
+                lettersContainer.classList.add("finshed");
+            }
+
+        }else{
+
+            //  document.getElementById("success").play();
+             
+
         }
     }
 
 });
+function EndGame(){
+
+    let div = document.createElement("div");
+
+    div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The Word is <span class = "theword">${RandomName}</span></span>`;
+    
+    div.className = "gameover";
+
+    document.body.appendChild(div);
+
+}
+function success(){
+        let div = document.createElement("div");
+
+    div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The Word is <span class = "theword">${RandomName}</span></span>`;
+    
+    div.className = "gameover";
+
+    document.body.appendChild(div);
+}
