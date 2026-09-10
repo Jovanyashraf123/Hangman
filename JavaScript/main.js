@@ -163,6 +163,10 @@ document.addEventListener("click", e =>{
             }
              
         });
+                    if (thestatus === true) {
+            checkWin();
+            }
+
         // Outside Loop
         if(thestatus !==true){
 
@@ -195,4 +199,25 @@ div.innerHTML = `<span class = "game-over-title">Game Over </span><br><span> The
 div.className = "gameover";
 
 document.body.appendChild(div);
+}
+function checkWin() {
+  let allFilled = true;
+
+  guessspan.forEach(span => {
+    if (!span.classList.contains('with-space') && span.innerHTML.trim() === "") {
+      allFilled = false;
+    }
+  });
+
+  if (allFilled) {
+    WinGame();
+    lettersContainer.classList.add("finshed");
+  }
+}
+
+function WinGame(){
+  let div = document.createElement("div");
+  div.innerHTML = `<span class = "game-over-title win-title">Congratulations! </span><br><span> The Word is <span class = "theword2">${RandomName}</span></span><br><button class = "btn2" onclick="location.reload()">New Game</button>`;
+  div.className = "gameover";
+  document.body.appendChild(div);
 }
