@@ -124,19 +124,21 @@ NameArray.forEach(letter =>{
 });
 
 // ====================================OK=======================================//
-let guessspan = document.querySelectorAll('.guess-letters span')
+let guessspan = document.querySelectorAll('.guess-letters span')//new
 
-let wrong = 0;
+let wrong = 0;//new
 
-let thedraw = document.querySelector('.hangman-draw')
+let thedraw = document.querySelector('.hangman-draw')//new
 
 document.addEventListener("click", e =>{
 
-    let thestatus = false;
+    let thestatus = false; //new
 
     if(e.target.className === 'letter-box'){
 
         e.target.classList.add("clicked");
+
+        // ================================================//
 
         let theclickedletter = e.target.innerHTML.toLowerCase();
 
@@ -149,8 +151,6 @@ document.addEventListener("click", e =>{
             if(theclickedletter == wordletter){
 
                 thestatus = true;
-
-              
             
                 guessspan.forEach((span , spanIndex) =>{
 
@@ -200,6 +200,7 @@ div.className = "gameover";
 
 document.body.appendChild(div);
 }
+
 function checkWin() {
   let allFilled = true;
 

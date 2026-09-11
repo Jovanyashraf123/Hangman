@@ -238,6 +238,12 @@ hr {
   border-radius: 6px;
   cursor: pointer;
 }
+.letters .letter-box:hover {
+  background-color: #16a085;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+}
 .letters .letter-box.clicked {
   background-color: #2a2a2a;
   opacity: 0.5;
@@ -318,6 +324,7 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(0 0 0 / 70%);
+
   width: 100%;
   text-align: center;
   font-size: 27px;
@@ -331,6 +338,7 @@ hr {
   color: #d70000;
   font-weight: bold;
   font-size: 40px;
+  text-transform: uppercase;
 }
 .gameover button {
   margin-top: 15px;
@@ -346,18 +354,46 @@ hr {
 .gameover .win-title {
   color: green;
 }
-.theword2{
+.theword2 {
   color: green;
   font-weight: bold;
+  text-transform: uppercase;
 }
-
+.restart {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.restart1 {
+  background-color: #10cab7;
+  color: #0d1b1b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.restart1:hover {
+  background-color: #16a085;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+}
 /* =========================================================== */
 /* ============ نسخة الموبايل من الرسمة (نفس التصميم بمقاس أصغر) ============ */
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
   }
+  .game-info .game-name {
+    font-size: 18px;
+  }
 
+  .game-info .category {
+    font-size: 16px;
+  }
   .hangman-draw {
     height: 210px;
     padding: 10px;
@@ -514,4 +550,8 @@ hr {
     padding: 8px 18px;
     font-size: 13px;
   }
+}
+.myname .p {
+  color: white;
+  font-size: 40px;
 }
