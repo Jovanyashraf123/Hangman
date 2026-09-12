@@ -286,6 +286,59 @@ hr {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.hangman-draw .R-eye {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background-color: black;
+  left: 181px;
+  top: 65px;
+  transform: rotate(40deg);
+  display: none;
+}
+.L-eye {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background-color: black;
+  left: 156px;
+  top: 65px;
+  transform: rotate(40deg);
+  display: none;
+}
+.hangman-draw .R-eye2 {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background-color: black;
+  left: 181px;
+  top: 65px;
+  transform: rotate(-40deg);
+  display: none;
+}
+.L-eye2 {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background-color: black;
+  left: 156px;
+  top: 65px;
+  transform: rotate(-40deg);
+  display: none;
+}
+.mouse {
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: black;
+  left: 160px;
+  top: 92px;
+  display: none;
+}
 .hangman-draw.wrong-1 .the-draw {
   display: block;
 }
@@ -314,6 +367,21 @@ hr {
   display: block;
 }
 .hangman-draw.wrong-10 .legs:after {
+  display: block;
+}
+.hangman-draw.wrong-10 .R-eye {
+  display: block;
+}
+.hangman-draw.wrong-10 .L-eye {
+  display: block;
+}
+.hangman-draw.wrong-10 .R-eye2 {
+  display: block;
+}
+.hangman-draw.wrong-10 .L-eye2 {
+  display: block;
+}
+.hangman-draw.wrong-10 .mouse {
   display: block;
 }
 .gameover {
@@ -381,6 +449,7 @@ hr {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
 }
+
 /* =========================================================== */
 /* ============ نسخة الموبايل من الرسمة (نفس التصميم بمقاس أصغر) ============ */
 @media (max-width: 768px) {
@@ -399,7 +468,12 @@ hr {
     padding: 10px;
     min-height: 102px;
   }
-
+  .hangman-draw .the-face {
+    left: -7px;
+    top: -4px;
+    position: absolute;
+    transform: scale(0.7);
+  }
   .hangman-draw .the-draw {
     width: 40px;
     height: 182px;
